@@ -1,5 +1,6 @@
 import { ComponentType } from 'react';
-import { Omit } from 'yargs';
+
+type Omit<T, K> = { [key in Exclude<keyof T, K>]: T[key] };
 
 const withDefaultProps = <P extends object, DP extends Partial<P> = Partial<P>>(
     defaultProps: DP,
